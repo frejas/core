@@ -1,0 +1,2 @@
+# core
+Freja Core
