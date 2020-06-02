@@ -1,6 +1,5 @@
 {
-    "name": "freja/core",
-    "description": "Core of freja.",
-    "type": "project",
-    "require": {}
+    "name": "frejas/core",
+    "description": "Core of Frejas.",
+    "type": "project"
 }
