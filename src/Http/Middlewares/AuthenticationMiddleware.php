@@ -2,6 +2,7 @@
 
 namespace Frejas\Core\Http\Middlewares;
 
+use DateTime;
 use Frejas\Core\Repositories\AuthTokenRepositoryInterface;
 use Jitesoft\Exceptions\Http\Client\HttpUnauthorizedException;
 use Psr\Http\Message\ResponseInterface;
@@ -22,7 +23,7 @@ class AuthenticationMiddleware implements MiddlewareInterface {
 
         $authHeader = $request->getHeader('Authorization')[0];
         $token = $this->authTokenRepository->getToken($authHeader);
-        if ($token === null) {
+        if ($token === null || $token->ttl < (new DateTime())->getTimestamp()) {
             throw new HttpUnauthorizedException();
         }
 
