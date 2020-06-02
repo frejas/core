@@ -15,18 +15,20 @@ $builder->group('admin', static function (RouteBuilder $builder) {
     $builder->post('user', UserController::class . '@' . 'postUser');
     $builder->delete('user/{id}', UserController::class . '@' . 'deleteUser');
 
-    $builder->put('post/{slug}', PostController::class . '@' . 'putPost');
+    $builder->get('users', UserController::class . '@' . 'getUsers');
+
+    $builder->put('post/{id}', PostController::class . '@' . 'putPost');
     $builder->post('post', PostController::class . '@' . 'postPost');
-    $builder->delete('post/{slug}', PostController::class . '@' . 'deletePost');
+    $builder->delete('post/{id}', PostController::class . '@' . 'deletePost');
 
 }, [
-    new AuthenticationMiddleware(),
-    new AuthorizationMiddleware()
+    AuthenticationMiddleware::class,
+    AuthorizationMiddleware::class
 ]);
 
 
 $builder->get('posts', PostController::class . '@' . 'getPosts');
-$builder->get('post/{slug}', PostController::class . '@' . 'getPost');
+$builder->get('post/{id}', PostController::class . '@' . 'getPost');
 
 $builder->get('user/{id}', UserController::class . '@' . 'getUser');
 $builder->get('users', UserController::class . '@' . 'getUsers');

@@ -8,7 +8,8 @@
         "jitesoft/loggers": "2.1.*",
         "jitesoft/exceptions": "2.3.*",
         "guzzlehttp/psr7": "1.6.*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.5.*",
