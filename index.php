@@ -1,5 +1,4 @@
 <?php
-
 use Frejas\Core\App;
 use GuzzleHttp\Psr7\ServerRequest;
 
@@ -15,5 +14,6 @@ foreach ($result->getHeaders() as $name => $header) {
         header(sprintf('%s: %s', $name, $value), true);
     }
 }
+
 http_response_code($result->getStatusCode());
 die($result->getBody());
