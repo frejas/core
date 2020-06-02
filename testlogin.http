@@ -1,0 +1,17 @@
+###
+GET http://localhost:8080/admin/users
+Accept: application/json
+Authorization: 21498c26d9d4d4df8c008e4c31b40e4ba4cbaa35d28f126f2a1657d5489311fc43263abe8b1a1671812e0a85e73e9fd291f806dc581a5e948c41d79a5b6d9262
+
+###
+GET http://localhost:8080/admin/users
+Accept: application/json
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "id": 1,
+    "password": "test"
+}

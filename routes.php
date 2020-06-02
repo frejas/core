@@ -27,6 +27,8 @@ $builder->group('admin', static function (RouteBuilder $builder) {
 ]);
 
 
+$builder->post('login', IndexController::class . '@' . 'postLogin');
+
 $builder->get('posts', PostController::class . '@' . 'getPosts');
 $builder->get('post/{id}', PostController::class . '@' . 'getPost');
 
